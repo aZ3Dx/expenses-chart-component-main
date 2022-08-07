@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Cream);
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_header {
+    background-color: var(--Soft-red);
+    width: 100%;
+    max-width: 600px;
+}
+
+.main_body {
+    background-color: var(--Very-pale-orange);
+    width: 100%;
+    max-width: 600px;
+}
+
+.main_body-bars {
+    display: flex;
+    justify-content: space-evenly;
+    height: 140px;
+}
+
+.main_body-bars>div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.main_body-bars>div>div {
+    height: 100%;
+    width: 40px;
+    background-color: var(--Soft-red);
+}
+.main_body-bars .maxAmount>div {
+    background-color: var(--Cyan);
+}
+
+hr {
+    margin-top: 2rem;
+}
+
+/* p:18 */
+
