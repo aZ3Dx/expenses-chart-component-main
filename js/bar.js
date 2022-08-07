@@ -29,3 +29,5 @@ fetch(url)
         });
         barsContainer.innerHTML = barsHtml;
     })
+
+    // ESTE SERIA MI ERROR QUE QUIERO VER
