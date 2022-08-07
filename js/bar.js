@@ -31,3 +31,9 @@ fetch(url)
     })
 
     // ESTE SERIA MI ERROR QUE QUIERO VER
+
+    // Este sería el 2do error
+    // Este sería el 2do error
+    // Este sería el 2do error
+    // Este sería el 2do error
+    // Este sería el 2do error
