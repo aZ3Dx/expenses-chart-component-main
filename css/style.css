@@ -2,7 +2,9 @@
 
 :root {
     --Soft-red: hsl(10, 79%, 65%);
+    --Soft-red-opacity: hsla(10, 79%, 65%, 0.6);
     --Cyan: hsl(186, 34%, 60%);
+    --Cyan-opacity: hsla(186, 34%, 60%, 0.6);
 
     --Dark-brown: hsl(25, 47%, 15%);
     --Medium-brown: hsl(28, 10%, 53%);
@@ -87,13 +89,48 @@ main {
     align-items: center;
     justify-content: flex-end;
 }
-.main_body-bars>div>div {
+.main_body-bars .label {
+    z-index: 1;
+    position: absolute;
+    top: -40px;
+    background-color: var(--Dark-brown);
+    width: 68px;
+    border-radius: 6px;
+    text-align: center;
+    color: var(--Very-pale-orange);
+    padding: 6px 0;
+    font-weight: 700;
+    display: none;
+}
+.main_body-bars .label.show {
+    display: block;
+    animation: fadeIn .5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.main_body-bars .bar {
     border-radius: 5px;
     width: 48px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.main_body-bars>div:not(.maxAmount) .bar {
     background-color: var(--Soft-red);
 }
-.main_body-bars .maxAmount>div {
+.main_body-bars .maxAmount .bar {
     background-color: var(--Cyan);
+}
+.main_body-bars .bar.active {
+    cursor: pointer;
 }
 .main_body-bars p {
     color: var(--Medium-brown);
@@ -133,6 +170,26 @@ hr {
     font-weight: 400;
 }
 
+.footer_container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.footer_container-attr {
+    font-size: 14px;
+    color: var(--Medium-brown);
+    text-align: center;
+}
+
+.footer_container-attr a {
+    text-decoration: none;
+    color: var(--Soft-red);
+}
+.footer_container-attr a:hover {
+    color: var(--Soft-red-opacity);
+}
+
 @media (max-width: 500px) {
     main {
         gap: 16px;
@@ -156,7 +213,7 @@ hr {
         margin-top: 0;
         font-size: 24px;
     }
-    .main_body-bars>div>div {
+    .main_body-bars .bar {
         border-radius: 3px;
         width: 33px;
     }
